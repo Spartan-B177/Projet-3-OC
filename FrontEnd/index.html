@@ -7,18 +7,19 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/7451ec083c.js" crossorigin="anonymous"></script>
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="/FrontEnd/index.js" defer></script>
 </head>
-<body>
+<body id="body">
 <header>
 	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav>
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<a href="login.html"><li>login</li></a>
+			<a href="login.html" class="login"><li>login</li></a>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -36,7 +37,23 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+		<div class="projets-box">
+			<h2>Mes Projets</h2>
+			<div class="modal-box">
+
+				<div class="modal-bg modal-trigger"></div>
+				
+				<div class="modal" role="dialog" aria-labelledby="modal-title">
+					<button class="close-modal modal-trigger" aria-label="close modal"><i class="fa-solid fa-xmark"></i></button>
+					<h3 id="modal-title">Galerie photo</h3>
+					<div class="modal-pics">
+						
+					</div>
+					<button class="modal-2">Ajouter une photo</button>
+				</div>
+		
+			</div>
+		</div>
 		<div class="filtres">
 			<button class="btn-tous">Tous</button>
 			<button class="btn-objets">Objets</button>

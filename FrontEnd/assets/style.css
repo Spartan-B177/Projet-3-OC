@@ -53,6 +53,17 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+.edition {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 4em;
+	gap: 10px;
+	background: black;
+	color: white;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -129,7 +140,122 @@ li:hover, nav a:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	padding-left: 3em;
+}
+
+.projets-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 2em;
+}
+
+.projets-box a {
+	text-decoration: none;
+	color: black;
+}
+
+.projets-box h3 {
+	font-size: 2em;
+	margin: 1em;
+}
+
+.modal-box {
+	visibility: hidden;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	transition: visibility 0.4s;
+}
+
+.modal-box.active {
+	visibility: visible;
+}
+
+.modal-bg {
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #333333d3;
+	transition: opacity 0.4s 0.2s ease-out
+}
+
+.modal-box.active .modal-bg {
+	opacity: 1;
+	transition: opacity 0.4s ease-out
+}
+
+.modal {
+	opacity: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+	width: 95%;
+	max-width: 500px;
+	min-width: 320px;
+	padding: 30px;
+	border-radius: 5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: opacity 0.4s ease-out
+}
+
+.modal-box.active .modal {
+	opacity: 1;
+	transition: opacity 0.4s 0.2s ease-out
+}
+
+.modal-pics {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 3em;
+	padding-bottom: 3em;
+	border-bottom: #b3b3b3 solid 1px;
+}
+
+.modal-image-suppr {
+	height: 2em;
+	width: 2em;
+}
+
+.modal img {
+	width: 75px;
+	height: auto;
+	margin-top: 20px;
+}
+
+.modal-2 {
+	font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    margin: 1em;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    border-radius: 60px;
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.close-modal {
+	padding: 8px 10px;
+	border: none;
+	background: none;
+	font-size: 18px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
 }
 
 .filtres {
