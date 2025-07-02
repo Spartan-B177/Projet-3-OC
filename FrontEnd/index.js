@@ -121,6 +121,13 @@ if (window.localStorage.getItem("token") !== null) {
         modalBox.classList.toggle("active")
     }
 
+    const ajouterPhoto = document.querySelector(".modal-2")
+    ajouterPhoto.classList.add("modal-trigger")
+    ajouterPhoto.addEventListener("click", () => {
+        
+    })
+
+      /* Fenêtres modales et suppression des travaux*/
     
     function genererModalPics(works){
         for (let i = 0; i < works.length; i++){
@@ -129,9 +136,16 @@ if (window.localStorage.getItem("token") !== null) {
             const modalImage = document.createElement("img");
             modalImage.src = works[i].imageUrl;
 
-            const modalImageSuppr = document.createElement("button")
-            modalImageSuppr.classList.add("modal-image-suppr", "fa-regular", "fa-trash-can")
+            const modalImageSuppr = document.createElement("button") 
+            modalImageSuppr.classList.add("modal-image-suppr", "fa-regular", "fa-trash-can")         
 
+            
+            
+            modalImageSuppr.addEventListener("click",() =>{
+                deleteWorks(works[i].id)
+                console.log(works)
+            })
+            
             modalPics.appendChild(modalImage)
             modalPics.appendChild(modalImageSuppr)
         }
@@ -140,11 +154,18 @@ if (window.localStorage.getItem("token") !== null) {
     genererModalPics(works)
 
     const chargeUtile = JSON.stringify(works)
-    console.log(chargeUtile)
 
-    const response = await fetch("http://localhost:5678/api/works/id" + [i] , {
+    async function deleteWorks(id){
+        const response = await fetch("http://localhost:5678/api/works/" + id , {
         method: "DELETE",
-        headers: { "Content-Type": "application/json"} ,
-        body: works,
-    })
+        headers: { 
+               "Authorization": `Bearer ${window.localStorage.getItem("token")}`
+               
+            },
+        })        
+    }
+
+    function returnWorks(id){
+        const response = fetch
+    }
 } 

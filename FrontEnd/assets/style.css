@@ -214,15 +214,17 @@ li:hover, nav a:hover {
 .modal-pics {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	margin: 3em;
 	padding-bottom: 3em;
 	border-bottom: #b3b3b3 solid 1px;
 }
 
 .modal-image-suppr {
-	height: 2em;
-	width: 2em;
+	position: relative;
+    top: 25px;
+    right: 35px;
+    height: 2em;
+    width: 2em;
 }
 
 .modal img {
