@@ -19,7 +19,7 @@
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<a href="login.html" class="login"><li>login</li></a>
+			<a href="login.html" id="login"><li>login</li></a>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -39,6 +39,8 @@
 	<section id="portfolio">
 		<div class="projets-box">
 			<h2>Mes Projets</h2>
+
+			<!-- Modale 1 (Modifer) -->
 			<div class="modal-box">
 
 				<div class="modal-bg modal-trigger"></div>
@@ -53,31 +55,54 @@
 				</div>
 		
 			</div>
+
+			<!-- Modale 2 (Ajouter une photo) -->
 			<div class="modal-box-2">
 
-				<div class="modal-bg modal-trigger"></div>
+				<div class="modal-bg modal-trigger-2"></div>
 				
-				<div class="modal" role="dialog" aria-labelledby="modal-title">
-					<button class="close-modal modal-trigger" aria-label="close modal"><i class="fa-solid fa-xmark"></i></button>
-					<h3 id="modal-title">Ajout photo</h3>
+				<div class="modal" role="dialog" aria-labelledby="modal-title-2">
+					<button class="close-modal modal-trigger-2" aria-label="close modal"><i class="fa-solid fa-xmark"></i></button>
+					<h3 id="modal-title-2">Ajout photo</h3>
+
+					<form id="photo-form" method="get" action="">
+						<div class="photo-container">							
+							<label for="photo-file" id="photo-label">+ Ajouter Photo</label> 
+							<input type="file" name="photo-file" id="photo-file">
+							<img id="photo-preview">
+							<p id="photo-warning">jpg, png : 4mo max</p>
+						</div>
+						
+						<label for="photo-title">Titre</label>
+						<input type="text" name="photo-title" id="photo-title">
+						<label for="photo-category">Catégorie</label>
+						<select name="photo-category" id="photo-category">
+						</select>
+						<input type="submit" id="valider-photo" value="Valider">
+						<div class="modal-add-photo">							
+					</form>
+						
+					</div>
 				</div>
 		
 			</div>
 		</div>
-		<div class="filtres">
-			<button class="btn-tous">Tous</button>
-			<button class="btn-objets">Objets</button>
-			<button class="btn-appartements">Appartements</button>
-			<button class="btn-hotels-restaurants">Hotels & Restaurants</button>
+
+		<!-- Filtres works -->
+
+		<div class="filtres">			
 		</div>
 
+		<!-- Works -->
+		 
 		<div class="gallery">			
 		</div>
+		
 	</section>
 	<section id="contact">
 		<h2>Contact</h2>
 		<p>Vous avez un projet ? Discutons-en !</p>
-		<form action="#" method="post">
+		<form action="" method="post">
 			<label for="name">Nom</label>
 			<input type="text" name="name" id="name">
 			<label for="email">Email</label>
