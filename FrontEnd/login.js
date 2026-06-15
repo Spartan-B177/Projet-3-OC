@@ -1,10 +1,13 @@
+const login = document.getElementById("login");
+const champEmail = document.getElementById("email")
+const champPassword = document.getElementById("password")
+
 export async function ajoutListenerLogin() {
     
-    const login = document.getElementById("login");
+    
     login.addEventListener("submit", async function (event) {
-        removeMessageErreur()
     event.preventDefault();
-
+    
     const user = {
         email: event.target.querySelector("[name=email]").value,
         password: event.target.querySelector("[name=password]").value,
@@ -28,15 +31,25 @@ export async function ajoutListenerLogin() {
     });
 }
 
-function messageErreur() {
+async function messageErreur() {
     const msgError = document.querySelector(".msgError");
-msgError.innerText = "Mauvais mot de passe";
+msgError.innerText = "Identifiant ou mot de passe erroné.";
 }
 
-function removeMessageErreur() {
-    const removeMsgError = document.querySelector(".msgError");
-    removeMsgError.innerText = ""
+function verifyLogin(formulaire) {
+    if (formulaire.value === "") {
+        formulaire.classList.add("error")
+    } else {
+        formulaire.classList.remove("error")
+    }
 }
 
+champEmail.addEventListener("change", () => {
+    verifyLogin(champEmail)
+})
+
+champPassword.addEventListener("change", () => {
+    verifyLogin(champPassword)
+})
 
 ajoutListenerLogin()

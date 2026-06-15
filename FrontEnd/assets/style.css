@@ -452,6 +452,16 @@ input[type="submit"]{
 	cursor: pointer;
 }
 
+.msgError {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top:25px;
+	color: red;
+	font-style: italic;
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
@@ -459,7 +469,7 @@ footer nav ul {
 }
 
 .error {
-	background: red;
+	background: rgba(255, 0, 0, 0.2);
 }
 
 .hide-element {

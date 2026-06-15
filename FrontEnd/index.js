@@ -50,9 +50,9 @@ getCategories()
 
 function verifyForm(formulaire) {
     if (formulaire.value === "") {
-        formulaire.classList.add(".error")
+        formulaire.classList.add("error")
     } else {
-        formulaire.classList.remove(".error")
+        formulaire.classList.remove("error")
     }
 }
 
@@ -247,7 +247,6 @@ if (window.localStorage.getItem("token") !== null) {
         modalBox2.classList.toggle("active");
     }
 
-    let photoContainer = document.querySelector(".photo-container");
     let photoForm = document.getElementById("photo-form");
     let photoPreview = document.getElementById("photo-preview");
 
@@ -265,9 +264,10 @@ if (window.localStorage.getItem("token") !== null) {
     })
     
 
-    let validerPhoto = document.getElementById("valider-photo")
-    validerPhoto.addEventListener("change", () => {
-        verifyForm(validerPhoto)
+    let photoTitle = document.getElementById("photo-title")
+    
+    photoTitle.addEventListener("change", () => {
+        verifyForm(photoTitle)
     })
 
     function ajouterWorks() {
