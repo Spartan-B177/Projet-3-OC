@@ -106,9 +106,14 @@ nav li {
 	font-size: 1.2em;
 }
 
+nav li:hover {
+	cursor: pointer;;
+}
+
 nav a {
 	text-decoration: none;
 	color:black ;
+	font-size: 1.2em
 }
 
 li:hover, nav a:hover {

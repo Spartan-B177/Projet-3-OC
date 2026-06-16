@@ -131,7 +131,7 @@ if (window.localStorage.getItem("token") !== null) {
 
     const logout = document.getElementById("login");
 
-    logout.innerText = "Logout";
+    logout.innerText = "logout";
     logout.href = "index.html";
     logout.addEventListener("click", () => {
         window.localStorage.removeItem("token")

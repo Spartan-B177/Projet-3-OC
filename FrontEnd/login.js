@@ -44,8 +44,18 @@ function verifyLogin(formulaire) {
     }
 }
 
+function verifyEmail(formulaire) {
+    let regExpEmail = new RegExp("[a-z._-]+@[a-z._-]+\\.[a-z._-]+")
+    
+    if (regExpEmail.test(formulaire.value)) {
+        formulaire.classList.remove("error")
+    } else {
+        formulaire.classList.add("error")
+    }
+}
+
 champEmail.addEventListener("change", () => {
-    verifyLogin(champEmail)
+    verifyEmail(champEmail)
 })
 
 champPassword.addEventListener("change", () => {
